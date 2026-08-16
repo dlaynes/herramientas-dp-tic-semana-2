@@ -1,0 +1,218 @@
+#app {
+  width: 100%;
+  max-width: 560px;
+  margin: 0 auto;
+  padding: 48px 20px;
+  box-sizing: border-box;
+  text-align: left;
+}
+
+.app-header {
+  text-align: center;
+  margin-bottom: 28px;
+
+  h1 {
+    font-family: var(--heading);
+    font-weight: 600;
+    font-size: 40px;
+    color: var(--text-h);
+    margin: 0 0 6px;
+  }
+
+  .subtitle {
+    color: var(--text);
+    font-size: 15px;
+  }
+}
+
+.add-form {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.add-input {
+  flex: 1;
+  font: inherit;
+  padding: 10px 14px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: var(--bg);
+  color: var(--text-h);
+  outline: none;
+  transition: border-color 0.2s;
+
+  &:focus {
+    border-color: var(--accent);
+  }
+}
+
+.add-btn {
+  font: inherit;
+  font-weight: 500;
+  padding: 10px 18px;
+  border-radius: 8px;
+  border: none;
+  background: var(--accent);
+  color: #fff;
+  cursor: pointer;
+  transition: opacity 0.2s;
+
+  &:hover {
+    opacity: 0.9;
+  }
+  &:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+  }
+}
+
+.filters {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 16px;
+  justify-content: center;
+}
+
+.filter-btn {
+  font: inherit;
+  font-size: 14px;
+  padding: 6px 12px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--text);
+  cursor: pointer;
+  transition: all 0.2s;
+
+  &:hover {
+    border-color: var(--accent-border);
+    color: var(--text-h);
+  }
+
+  &.active {
+    background: var(--accent-bg);
+    border-color: var(--accent);
+    color: var(--text-h);
+  }
+}
+
+.todo-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.empty {
+  text-align: center;
+  color: var(--text);
+  padding: 24px 0;
+}
+
+.todo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 14px;
+  border-radius: 10px;
+  background: var(--social-bg);
+  border: 1px solid var(--border);
+  transition: opacity 0.2s;
+
+  &.completed .todo-text {
+    text-decoration: line-through;
+    color: var(--text);
+  }
+}
+
+.todo-check {
+  position: relative;
+  display: inline-flex;
+  cursor: pointer;
+  flex-shrink: 0;
+
+  input {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+
+  .checkmark {
+    width: 22px;
+    height: 22px;
+    border-radius: 6px;
+    border: 2px solid var(--border);
+    display: inline-block;
+    transition: all 0.15s;
+  }
+
+  input:checked + .checkmark {
+    background: var(--accent);
+    border-color: var(--accent);
+
+    &::after {
+      content: '✓';
+      color: #fff;
+      font-size: 15px;
+      font-weight: bold;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+}
+
+.todo-text {
+  flex: 1;
+  color: var(--text-h);
+  word-break: break-word;
+}
+
+.remove-btn {
+  background: transparent;
+  border: none;
+  font-size: 22px;
+  line-height: 1;
+  color: var(--text);
+  cursor: pointer;
+  padding: 2px 8px;
+  border-radius: 6px;
+  transition: all 0.15s;
+
+  &:hover {
+    color: #e0244e;
+    background: rgba(224, 36, 78, 0.1);
+  }
+}
+
+.app-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+  padding-top: 14px;
+  border-top: 1px solid var(--border);
+  font-size: 14px;
+  color: var(--text);
+}
+
+.clear-btn {
+  font: inherit;
+  font-size: 14px;
+  background: transparent;
+  border: none;
+  color: var(--text);
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: 6px;
+
+  &:hover {
+    color: var(--text-h);
+    background: var(--code-bg);
+  }
+}
