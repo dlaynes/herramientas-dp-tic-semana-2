@@ -14,6 +14,8 @@ jobs:
     steps:
     - name: Prueba inicial
       run: echo "Hola mundo"
+    - name: Mostrar fecha de ejecucion
+      run: date
     - name: Checkout repository
       uses: actions/checkout@v4
     - name: Setup Node.js
