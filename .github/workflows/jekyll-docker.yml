@@ -14,3 +14,9 @@ jobs:
     steps:
     - name: Prueba inicial
       run: echo "Hola mundo"
+    - name: Build
+      run: |
+        npm i
+        npm run lint
+        npm run build
+        npm run test
